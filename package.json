@@ -1,0 +1,54 @@
+{
+  "name": "react-grab-visbug-copy",
+  "version": "1.0.0",
+  "description": "Track visual edits made with VisBug and copy them with file paths for AI agents",
+  "keywords": [
+    "react",
+    "visbug",
+    "visual-editing",
+    "ai",
+    "copy",
+    "css"
+  ],
+  "homepage": "https://github.com/jacksonkasi1/react-grab-visbug-copy",
+  "bugs": {
+    "url": "https://github.com/jacksonkasi1/react-grab-visbug-copy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacksonkasi1/react-grab-visbug-copy.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Jackson Kasi",
+    "email": "jacksonkasipeacock@gmail.com"
+  },
+  "type": "module",
+  "main": "dist/client/standalone.cjs",
+  "module": "dist/client/standalone.js",
+  "types": "dist/client/standalone.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/client/standalone.d.ts",
+      "import": "./dist/client/standalone.js",
+      "require": "./dist/client/standalone.cjs"
+    }
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "examples/"
+  ],
+  "scripts": {
+    "build": "esbuild src/client/standalone.ts --bundle --minify --format=iife --global-name=VisBugCopy --outfile=dist/client/standalone.js && esbuild src/client/standalone.ts --bundle --minify --format=cjs --outfile=dist/client/standalone.cjs",
+    "dev": "esbuild src/client/standalone.ts --bundle --format=iife --global-name=VisBugCopy --outfile=dist/client/standalone.js --watch",
+    "test": "echo \"Open examples/web/with-visbug-extension.html in browser\"",
+    "example": "echo \"Open examples/web/with-visbug-extension.html in browser\""
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  },
+  "peerDependencies": {
+    "react-grab": ">=0.1.0"
+  }
+}
