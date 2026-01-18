@@ -166,6 +166,30 @@ if (process.env.NODE_ENV === "development") {
 </html>
 ```
 
+## Live Examples
+
+Try these interactive examples to see VisBug Copy in action:
+
+| Example | Description | Demo |
+|---------|-------------|------|
+| [01-basic-button.html](/examples/web/01-basic-button.html) | Simple button with hover effects | Click the button, edit styles with VisBug |
+| [02-card-component.html](/examples/web/02-card-component.html) | Card UI components | Edit cards with images and text |
+| [03-navigation-bar.html](/examples/web/03-navigation-bar.html) | Navbar and hero section | Edit navigation and CTA buttons |
+| [04-form-elements.html](/examples/web/04-form-elements.html) | Form inputs and buttons | Edit form styling and focus states |
+
+### Running Examples Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/jacksonkasi1/react-grab-visbug-copy.git
+
+# Open any example in your browser
+open examples/web/01-basic-button.html
+# or
+cd examples/web && python3 -m http.server 8080
+# Then visit http://localhost:8080/01-basic-button.html
+```
+
 ## How It Works
 
 1. **Activate**: Press `Cmd+C` (Mac) or `Ctrl+C` (Windows) to activate React Grab overlay

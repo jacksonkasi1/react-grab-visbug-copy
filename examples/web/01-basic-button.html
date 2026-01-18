@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example 1: Basic Button</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 2rem;
+      }
+      .container { max-width: 600px; margin: 0 auto; text-align: center; }
+      h1 { color: #fff; margin-bottom: 1rem; }
+      p { color: rgba(255,255,255,0.9); margin-bottom: 2rem; }
+      .btn-primary {
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fff;
+        background: #667eea;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .btn-primary:hover {
+        background: #5a6fd6;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      }
+      .instructions {
+        background: rgba(255,255,255,0.95);
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-top: 2rem;
+        text-align: left;
+      }
+      .instructions h3 { margin-top: 0; color: #333; }
+      .instructions ol { color: #555; padding-left: 1.5rem; }
+      .instructions kbd {
+        background: #e9ecef;
+        border: 1px solid #ced4da;
+        border-radius: 3px;
+        padding: 0.2rem 0.5rem;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Example 1: Basic Button</h1>
+      <p>Edit this button with VisBug and copy the changes!</p>
+      
+      <button class="btn-primary" id="myButton">Click Me!</button>
+
+      <div class="instructions">
+        <h3>How to use:</h3>
+        <ol>
+          <li>Click <kbd>VisBug icon</kbd> in browser toolbar to activate VisBug</li>
+          <li>Press <kbd>Cmd + C</kbd> to activate React Grab</li>
+          <li>Click on the button to select it</li>
+          <li>Use VisBug tools to change color, font-size, etc.</li>
+          <li>Press <kbd>T</kbd> to track changes</li>
+          <li>Press <kbd>C</kbd> to copy changes</li>
+        </ol>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('myButton').addEventListener('click', function() {
+        this.textContent = 'Clicked!';
+        setTimeout(() => this.textContent = 'Click Me!', 1000);
+      });
+    </script>
+    <script src="https://unpkg.com/react-grab/dist/index.global.js"></script>
+    <script src="https://unpkg.com/react-grab-visbug-copy/dist/client/standalone.js"></script>
+  </body>
+</html>
