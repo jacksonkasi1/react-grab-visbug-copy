@@ -1,6 +1,6 @@
 {
   "name": "react-grab-visbug-copy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Track visual edits made with VisBug and copy them with file paths for AI agents",
   "keywords": [
     "react",
@@ -8,7 +8,8 @@
     "visual-editing",
     "ai",
     "copy",
-    "css"
+    "css",
+    "chrome-extension"
   ],
   "homepage": "https://github.com/jacksonkasi1/react-grab-visbug-copy",
   "bugs": {
@@ -46,9 +47,9 @@
     "example": "echo \"Open examples/web/with-visbug-extension.html in browser\""
   },
   "devDependencies": {
-    "esbuild": "^0.20.0"
+    "esbuild": "^0.20.2"
   },
-  "peerDependencies": {
-    "react-grab": ">=0.1.0"
+  "publishConfig": {
+    "access": "public"
   }
 }

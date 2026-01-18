@@ -88,7 +88,6 @@ attachVisBugCopy();
 
 When you copy changes, you'll get output like:
 
-```markdown
 # Visual Changes
 
 ## File Location
@@ -113,20 +112,17 @@ button.btn {
 
 ---
 *Tracked with React Grab VisBug Copy*
-```
 
 ## Example: Giving Changes to AI
 
 Copy the output and paste to your AI:
 
-```
-I changed the button background color to rgb(214, 135, 92) and increased 
-the font size to 24px. Please apply these changes to the actual codebase.
-
-Here are the changes:
-
-[PASTE THE OUTPUT FROM VISBUG COPY]
-```
+> I changed the button background color to rgb(214, 135, 92) and increased 
+> the font size to 24px. Please apply these changes to the actual codebase.
+>
+> Here are the changes:
+>
+> [PASTE THE OUTPUT FROM VISBUG COPY]
 
 ## Keyboard Shortcuts
 
