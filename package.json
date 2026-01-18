@@ -1,6 +1,6 @@
 {
   "name": "react-grab-visbug-copy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Track visual edits made with VisBug and copy them with file paths for AI agents",
   "keywords": [
     "react",

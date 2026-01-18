@@ -21,7 +21,7 @@ This tool combines **VisBug's visual editing capabilities** with **React Grab's 
 git clone https://github.com/jacksonkasi1/react-grab-visbug-copy.git
 ```
 
-### Option 2: NPM Package (Coming Soon)
+### Option 2: NPM Package
 
 ```bash
 npm install react-grab-visbug-copy
