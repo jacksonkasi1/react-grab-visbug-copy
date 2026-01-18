@@ -14,14 +14,7 @@ This tool combines **VisBug's visual editing capabilities** with **React Grab's 
 
 ## Installation
 
-### Option 1: Download & Use Locally
-
-```bash
-# Clone or download this repository
-git clone https://github.com/jacksonkasi1/react-grab-visbug-copy.git
-```
-
-### Option 2: NPM Package
+### NPM Package
 
 ```bash
 npm install react-grab-visbug-copy
@@ -29,56 +22,153 @@ npm install react-grab-visbug-copy
 pnpm add react-grab-visbug-copy
 ```
 
-## Quick Start
+### Download Locally
 
-### Prerequisites
-
-1. **Install VisBug Chrome Extension**
-   - Visit: https://visbug.web.app/
-   - Click "Add to Chrome"
-
-2. **Install React Grab**
-   - Clone: https://github.com/aidenybai/react-grab
-   - Or use the built version from this repo
-
-### Using the Demo
-
-1. Open `examples/web/with-visbug-extension.html` in your browser
-2. Click the **VisBug extension icon** in your browser toolbar to activate VisBug
-3. Press `Cmd + C` (Mac) or `Ctrl + C` (Windows) to activate React Grab
-4. Click on any element to select it
-5. Use VisBug tools to visually edit:
-   - 🎨 Paint bucket → change colors
-   - **A** → change fonts/text
-   - ↔️ → change spacing
-   - ⬛ → change shadows/borders
-6. Press `T` to track the element (stores original state)
-7. Make your visual changes with VisBug
-8. Press `C` to copy the changes
-
-## Usage
-
-### HTML (Script Tag)
-
-```html
-<!-- Load React Grab first -->
-<script src="path/to/react-grab/dist/index.global.js"></script>
-
-<!-- Load VisBug Copy -->
-<script src="path/to/react-grab-visbug-copy/dist/client/standalone.js"></script>
+```bash
+# Clone or download this repository
+git clone https://github.com/jacksonkasi1/react-grab-visbug-copy.git
 ```
 
-### JavaScript (Module)
+## Framework Integration
+
+### Next.js (App Router)
+
+Add this to your `app/layout.tsx`:
+
+```tsx
+import { Script } from "next/script";
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <head>
+        {process.env.NODE_ENV === "development" && (
+          <>
+            <Script
+              src="https://unpkg.com/react-grab/dist/index.global.js"
+              strategy="beforeInteractive"
+            />
+            <Script
+              src="https://unpkg.com/react-grab-visbug-copy/dist/client/standalone.js"
+              strategy="lazyOnload"
+            />
+          </>
+        )}
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+### Next.js (Pages Router)
+
+Add this to your `pages/_document.tsx`:
+
+```tsx
+import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
+
+export default function Document() {
+  return (
+    <Html lang="en">
+      <Head>
+        {process.env.NODE_ENV === "development" && (
+          <>
+            <Script
+              src="https://unpkg.com/react-grab/dist/index.global.js"
+              strategy="beforeInteractive"
+            />
+            <Script
+              src="https://unpkg.com/react-grab-visbug-copy/dist/client/standalone.js"
+              strategy="lazyOnload"
+            />
+          </>
+        )}
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+}
+```
+
+### Vite
+
+Add this to your `index.html` in the `<head>`:
+
+```html
+<script type="module">
+  if (import.meta.env.DEV) {
+    import("react-grab");
+    import("react-grab-visbug-copy");
+  }
+</script>
+```
+
+Or import in your main entry file:
+
+```tsx
+// src/main.tsx or src/main.jsx
+if (process.env.NODE_ENV === "development") {
+  import("react-grab");
+  import("react-grab-visbug-copy");
+}
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+
+const root = ReactDOM.createRoot(document.getElementById("root")!);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
+
+### Webpack
+
+Add to your webpack config or HTML template:
+
+```html
+<script src="https://unpkg.com/react-grab/dist/index.global.js"></script>
+<script src="https://unpkg.com/react-grab-visbug-copy/dist/client/standalone.js"></script>
+```
+
+Or use dynamic import in your entry file:
 
 ```javascript
-import { attachVisBugCopy } from 'react-grab-visbug-copy';
+if (process.env.NODE_ENV === "development") {
+  import("react-grab");
+  import("react-grab-visbug-copy");
+}
+```
 
-attachVisBugCopy();
+### Plain HTML
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/react-grab/dist/index.global.js"></script>
+    <script src="https://unpkg.com/react-grab-visbug-copy/dist/client/standalone.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
 ```
 
 ## How It Works
 
-1. **Activate**: Press `Cmd+C` to activate React Grab overlay
+1. **Activate**: Press `Cmd+C` (Mac) or `Ctrl+C` (Windows) to activate React Grab overlay
 2. **Select**: Click on any element to select it
 3. **Track**: Press `T` to track the element's original styles
 4. **Edit**: Use VisBug tools to make visual changes
