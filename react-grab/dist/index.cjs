@@ -1,0 +1,9 @@
+'use strict';var chunkTPY7I4YA_cjs=require('./chunk-TPY7I4YA.cjs');/**
+ * @license MIT
+ *
+ * Copyright (c) 2025 Aiden Bai
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+var e=null,c=()=>typeof window>"u"?e:window.__REACT_GRAB__??e??null,f=t=>{e=t,typeof window<"u"&&(t?window.__REACT_GRAB__=t:delete window.__REACT_GRAB__);};typeof window<"u"&&(window.__REACT_GRAB__?e=window.__REACT_GRAB__:(e=chunkTPY7I4YA_cjs.k(),window.__REACT_GRAB__=e),window.dispatchEvent(new CustomEvent("react-grab:init",{detail:e})));Object.defineProperty(exports,"DEFAULT_THEME",{enumerable:true,get:function(){return chunkTPY7I4YA_cjs.j}});Object.defineProperty(exports,"captureElementScreenshot",{enumerable:true,get:function(){return chunkTPY7I4YA_cjs.h}});Object.defineProperty(exports,"combineBounds",{enumerable:true,get:function(){return chunkTPY7I4YA_cjs.g}});Object.defineProperty(exports,"copyImageToClipboard",{enumerable:true,get:function(){return chunkTPY7I4YA_cjs.i}});Object.defineProperty(exports,"formatElementInfo",{enumerable:true,get:function(){return chunkTPY7I4YA_cjs.d}});Object.defineProperty(exports,"generateSnippet",{enumerable:true,get:function(){return chunkTPY7I4YA_cjs.f}});Object.defineProperty(exports,"getStack",{enumerable:true,get:function(){return chunkTPY7I4YA_cjs.c}});Object.defineProperty(exports,"init",{enumerable:true,get:function(){return chunkTPY7I4YA_cjs.k}});Object.defineProperty(exports,"isInstrumentationActive",{enumerable:true,get:function(){return chunkTPY7I4YA_cjs.b}});Object.defineProperty(exports,"isScreenshotSupported",{enumerable:true,get:function(){return chunkTPY7I4YA_cjs.a}});exports.getGlobalApi=c;exports.setGlobalApi=f;
